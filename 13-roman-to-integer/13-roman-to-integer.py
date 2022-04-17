@@ -21,10 +21,12 @@ class Solution:
         }
 
         # Check for sub values first
-        for val in sub_values.keys():
-            if val in s:
-                num = num + sub_values[val]
-                s = s.replace(val, '')
+        for key, value in sub_values.items():
+            if key in s:
+                print(key)
+                print(value)
+                num = num + value
+                s = s.replace(key, '')
 
         # Make a list from the remaining chars
         for val in s:
