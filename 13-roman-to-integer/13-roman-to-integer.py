@@ -19,10 +19,9 @@ class Solution:
             "CD": 400,
             "CM": 900
         }
-        sub_list = ["CM", "CD", "XC", "XL", "IX", "IV"]
 
         # Check for sub values first
-        for val in sub_list:
+        for val in sub_values.keys():
             if val in s:
                 num = num + sub_values[val]
                 s = s.replace(val, '')
