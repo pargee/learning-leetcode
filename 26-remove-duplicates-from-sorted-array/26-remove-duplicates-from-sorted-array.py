@@ -1,6 +1,6 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        # Another revision, this time a bit cleaner to read
+        # Another revision, this time a bit cleaner to read but slower - not sure why
         duplicates = 0
         for index in range(1, len(nums)):
             if nums[index] == nums[index - 1]:
