@@ -1,7 +1,7 @@
 class MyHashSet:
     def __init__(self):
         self.capacity = 15000
-        self.hash_set = [[]] * self.capacity
+        self.hash_set = [[] for _ in range(self.capacity)]
 
     def get_hash_value(self, key):
         return key % self.capacity
