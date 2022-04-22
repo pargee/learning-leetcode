@@ -1,25 +1,26 @@
 class MyHashSet:
     def __init__(self):
-        self.hash_size = 1000001
-        self.hash_set = [None] * self.hash_size
+        self.capacity = 15000
+        self.hash_set = [[]] * self.capacity
 
-    def contains_hash_value(self, key):
-        if key == 0:
-            return True
-        return key % self.hash_size
+    def get_hash_value(self, key):
+        return key % self.capacity
 
     def add(self, key: int) -> None:
-        if self.contains_hash_value(key):
-            self.hash_set[key] = key
+        hash_value = self.get_hash_value(key)
+        if key not in self.hash_set[hash_value]:
+            self.hash_set[hash_value].append(key)
 
     def remove(self, key: int) -> None:
-        if self.contains_hash_value(key):
-            self.hash_set[key] = None
+        hash_value = self.get_hash_value(key)
+        if key in self.hash_set[hash_value]:
+            self.hash_set[hash_value].remove(key)
 
     def contains(self, key: int) -> bool:
-        if key >= self.hash_size:
-            return False
-        return self.hash_set[key] is not None
+        hash_value = self.get_hash_value(key)
+        if key in self.hash_set[hash_value]:
+            return True
+        return False
 
     
 # Your MyHashSet object will be instantiated and called as such:
