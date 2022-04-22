@@ -1,7 +1,7 @@
 class MyHashSet:
     def __init__(self):
         # Doing this the 'right' way now, but still seems wicked slow :(
-        self.capacity = 1500
+        self.capacity = 15000
         self.hash_set = [[] for _ in range(self.capacity)]
 
     def get_hash_value(self, key):
